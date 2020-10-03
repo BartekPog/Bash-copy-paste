@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+# Initialization
+set -e -a
+userDir=$PWD
+
+cd "$(dirname "$0")"
+source common/config.sh
+source common/saving.sh
+source common/validation.sh
+
+# Make sure everything is properly configured
+ensureConfigured
+
+cat $CLIPBOARD_PATH/copy | while read line
+do
+    echo $line
+done
+
+
+# for base relative in ${cat $CLIPBOARD_PATH/copy}
+# do
+#     echo base $base relative $relative
+# done 
+
+echo "Done"

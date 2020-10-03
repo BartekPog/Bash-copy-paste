@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+# Initialization
+set -e -a
+userDir=$PWD
+
+cd "$(dirname "$0")"
+source common/config.sh
+source common/saving.sh
+source common/validation.sh
+
+# Make sure everything is properly configured
+ensureConfigured
+
+# Clear the cache 
+rm $CLIPBOARD_PATH/copy $CLIPBOARD_PATH/cut 2>/dev/null || true
+
+echo "Done"

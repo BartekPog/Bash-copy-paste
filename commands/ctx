@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+# Initialization
+set -e -a
+userDir=$PWD
+
+cd "$(dirname "$0")"
+source common/config.sh
+source common/saving.sh
+source common/validation.sh
+
+# Make sure everything is properly configured
+ensureConfigured
+
+# Validate the arguments
+for relativePath in "$@"
+do
+    checkPath "$userDir" "$relativePath"
+done 
+
+# TODO check and remove unnecessary copies or cuts
+
+# Save the copy
+for relativePath in "$@"
+do
+    saveOne cut "$userDir" "$relativePath"
+done 
+
+echo "Done"
