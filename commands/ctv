@@ -14,13 +14,21 @@ ensureConfigured
 
 cat $CLIPBOARD_PATH/copy | while read line
 do
-    echo $line
+    lineInput=(${line//,/ })
+    from="${lineInput[0]}/${lineInput[1]}"
+    to="${userDir}/${lineInput[1]}"
+    cp -r $from $to 
 done
 
 
-# for base relative in ${cat $CLIPBOARD_PATH/copy}
-# do
-#     echo base $base relative $relative
-# done 
+cat $CLIPBOARD_PATH/cut | while read line
+do
+    lineInput=(${line//,/ })
+    from="${lineInput[0]}/${lineInput[1]}"
+    to="${userDir}/${lineInput[1]}"
+    mv -r $from $to 
+done
+
+bash ctclean
 
 echo "Done"
