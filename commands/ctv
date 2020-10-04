@@ -29,6 +29,5 @@ do
     mv -r $from $to 
 done
 
+echo "Successfully copied/cut files"
 bash ctclean
-
-echo "Done"

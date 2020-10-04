@@ -24,6 +24,7 @@ done
 for relativePath in "$@"
 do
     saveOne cut "$userDir" "$relativePath"
+    echo "Cut: $relativePath"
 done 
 
-echo "Done"
+echo "Cached for cut"

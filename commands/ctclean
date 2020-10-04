@@ -15,4 +15,4 @@ ensureConfigured
 # Clear the cache 
 rm $CLIPBOARD_PATH/copy $CLIPBOARD_PATH/cut 2>/dev/null || true
 
-echo "Done"
+echo "Cleared cache"

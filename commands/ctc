@@ -24,6 +24,7 @@ done
 for relativePath in "$@"
 do
     saveOne copy "$userDir" "$relativePath"
+    echo "Copy $relativePath"
 done 
 
-echo "Done"
+echo "Cached for copy"
